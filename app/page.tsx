@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Support from './components/Support'
+import Legalitas from './components/Legalitas'
 import Features from './components/Features'
 import Story from './components/Story'
 import Products from './components/Products'
@@ -33,6 +34,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Support />
+      <Legalitas />
       <Features />
       <Story />
       <Products />

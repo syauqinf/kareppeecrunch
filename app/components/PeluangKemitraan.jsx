@@ -1,8 +1,13 @@
 'use client'
 
-import { Users, TrendingUp, Shield, Zap, Package, CheckCircle, Phone, Star, ArrowRight } from 'lucide-react'
+import { Users, TrendingUp, Shield, Zap, Package, CheckCircle, Phone, Star, ArrowRight, MessageCircle } from 'lucide-react'
 
 export default function PeluangKemitraan() {
+  const handleWhatsAppOrder = (packageName) => {
+    const message = `Halo Minka, saya tertarik bergabung menjadi Reseller Kareppee Crunch Paket ${packageName}. Mohon info selanjutnya.`
+    const whatsappUrl = `https://wa.me/62882019886782?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
+  }
   const packages = [
     {
       name: 'Paket Ekonomi',
@@ -137,9 +142,16 @@ export default function PeluangKemitraan() {
                   <p className="text-gray-600 font-medium mb-2">
                     {pkg.items}
                   </p>
-                  <p className="text-gray-500 text-sm">
+                  <p className="text-gray-500 text-sm mb-4">
                     {pkg.description}
                   </p>
+                  <button 
+                    onClick={() => handleWhatsAppOrder(pkg.name.replace('Paket ', ''))}
+                    className="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center"
+                  >
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Pesan Paket Ini
+                  </button>
                 </div>
               </div>
             ))}
@@ -171,38 +183,6 @@ export default function PeluangKemitraan() {
                 </p>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="bg-gradient-to-r from-orange-600 to-orange-700 rounded-2xl p-12 text-center text-white shadow-xl">
-          <h3 className="text-3xl font-bold mb-6">
-            Mulai Perjalanan Bisnis Anda
-          </h3>
-          
-          <p className="text-xl mb-8 text-orange-100">
-            Hubungi tim kami untuk informasi lengkap dan proses pendaftaran
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <div className="flex items-center gap-3 bg-white/20 backdrop-blur-sm rounded-xl px-6 py-4">
-              <Phone className="w-6 h-6 text-orange-300" />
-              <div>
-                <div className="text-white font-semibold">Admin (Minka) Support</div>
-                <div className="text-orange-300 font-mono">0882-0198-86782</div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 max-w-2xl mx-auto">
-            <p className="text-orange-100 mb-4 font-medium">
-              Template Pesan WhatsApp:
-            </p>
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-left">
-              <code className="text-orange-100 font-mono text-sm">
-                "Halo Minka, saya tertarik bergabung menjadi Reseller Kareppee Crunch Paket [Ekonomi/Standar/Pro]. Mohon info selanjutnya."
-              </code>
-            </div>
           </div>
         </div>
       </div>
