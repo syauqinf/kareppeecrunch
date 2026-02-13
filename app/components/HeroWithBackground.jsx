@@ -51,7 +51,7 @@ export default function HeroWithBackground({ backgroundImage = null }) {
 
               {/* Description */}
               <p className="text-xl text-orange-100 mb-8 leading-relaxed max-w-lg">
-                Nikmati keripik singkong premium yang dibuat dari bahan alami pilihan. 
+                Nikmati kerupuk singkong premium yang dibuat dari bahan alami pilihan. 
                 Perfect Quick, Perfect Taste, Perfect Mood.
               </p>
 

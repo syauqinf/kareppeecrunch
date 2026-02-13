@@ -9,7 +9,7 @@ export default function PusatBantuan() {
   const faqs = [
     {
       question: 'Apa itu Kareppee Crunch?',
-      answer: 'Kareppee Crunch adalah merek keripik singkong premium yang dibuat dari singkong pilihan berkualitas tinggi dengan proses produksi yang higienis dan telah tersertifikasi HALAL. Produk kami menggunakan resep terbaik dengan cita rasa autentik Indonesia.'
+      answer: 'Kareppee Crunch adalah merek kerupuk singkong premium yang dibuat dari singkong pilihan berkualitas tinggi dengan proses produksi yang higienis. Produk kami menggunakan resep terbaik dengan cita rasa autentik Indonesia. Kami telah memiliki kelengkapan dokumen legalitas lengkap termasuk Sertifikat Halal MUI, Perizinan Berusaha Berbasis Risiko, dan SPP-IRT untuk menjamin keamanan dan kualitas produk yang Anda konsumsi.'
     },
     {
       question: 'Bagaimana cara memesan produk Kareppee Crunch?',

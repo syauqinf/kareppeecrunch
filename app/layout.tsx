@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kareppee Crunch - Keripik Singkong Premium",
-  description: "Keripik singkong premium dengan cita rasa autentik Indonesia. Varian lezat dan renyah untuk camilan favorit Anda.",
+  title: "Kareppee Crunch - Kerupuk Singkong Premium",
+  description: "Kerupuk singkong premium dengan cita rasa autentik Indonesia. Varian lezat dan renyah untuk camilan favorit Anda.",
 };
 
 export default function RootLayout({

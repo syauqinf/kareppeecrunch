@@ -19,7 +19,7 @@ export default function Features() {
     {
       icon: Award,
       title: 'Teknik Produksi Autentik',
-      description: 'Kami tetap setia menggunakan cara tradisional dengan memipihkan adonan di atas daun pisang sebelum dikukus.',
+      description: 'Kami tetap setia menggunakan cara tradisional dengan memipihkan adonan di atas daun pisang sebelum proses pengukusan hingga pengeringan.',
       color: 'bg-orange-500'
     },
     {

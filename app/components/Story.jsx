@@ -28,7 +28,7 @@ export default function Story() {
     {
       icon: Heart,
       title: 'Teknik Autentik',
-      description: 'Menggunakan teknik pengolahan tradisional untuk menghasilkan keripik berkualitas'
+      description: 'Menggunakan teknik pengolahan tradisional untuk menghasilkan kerupuk berkualitas'
     },
     {
       icon: Users,
@@ -56,12 +56,12 @@ export default function Story() {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Kareppee produsen keripik singkong asli Gowa dengan kualitas premium
+            Kareppee produsen kerupuk singkong asli Gowa dengan kualitas premium
           </p>
 
           {/* Business Type */}
           <div className="inline-flex items-center bg-orange-600 text-white px-6 py-3 rounded-full mt-6">
-            <span className="text-lg font-semibold">Keripik Singkong</span>
+            <span className="text-lg font-semibold">Kerupuk Singkong</span>
           </div>
         </div>
 
@@ -76,7 +76,7 @@ export default function Story() {
               
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  Kareppee Crunch adalah produsen keripik singkong asal Gowa yang 
+                  Kareppee Crunch adalah produsen kerupuk singkong asal Gowa yang 
                   memproduksi camilan tradisional dengan kualitas modern.
                 </p>
                 

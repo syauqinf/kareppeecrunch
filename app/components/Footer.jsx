@@ -60,7 +60,7 @@ const Footer = () => {
             </div>
             
             <p className="text-gray-300 text-sm md:text-base mb-4 md:mb-6 leading-relaxed">
-              Keripik singkong premium dengan cita rasa autentik Indonesia. 
+              Kerupuk singkong premium dengan cita rasa autentik Indonesia. 
             </p>
             <div className="flex gap-3 md:gap-4 mt-2">
               {/* Instagram */}
@@ -130,7 +130,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
+        <div className="border-t border-gray-700 pt-8 text-center">
           <p className="text-gray-400 text-xs">
             &copy;2026 Kareppee Crunch. All rights reserved | Powered by DekatLokal
           </p>

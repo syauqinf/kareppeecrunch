@@ -48,7 +48,7 @@ export default function CTA() {
           Yuk, Coba <span className="text-orange-100">Kareppee Crunch</span> Sekarang!
         </h2>
         <p className="text-base md:text-lg text-orange-100 mb-6 md:mb-8 max-w-xl md:max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-          Keripik singkong renyah dengan berbagai varian rasa. Dijamin bikin nagih!
+          Kerupuk singkong renyah dengan berbagai varian rasa. Dijamin bikin nagih!
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-6 md:mb-8" data-aos="fade-up" data-aos-delay="200">

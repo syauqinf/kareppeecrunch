@@ -14,24 +14,24 @@ export default function Reviews() {
     },
     {
       id: 2,
-      name: 'Makmur',
-      avatar: 'M',
+      name: 'Sharifah Ulya',
+      avatar: 'SU',
       rating: 5,
-      product: 'Kareppee Hotlado',
-      review: 'Udah cobain, enak recommended, harganya juga murah. Teksturnya renyah, beda dengan keripik singkong lain, yang ini lebih gurih dan tidak keras.'
+      product: 'Kareppee Green Matcha',
+      review: 'Udah cobain, enak recommended, harganya juga murah. Teksturnya renyah, beda dengan kerupuk singkong lain, yang ini lebih gurih dan tidak keras.'
     },
     {
       id: 3,
       name: 'Rijal Ucil',
       avatar: 'RU',
       rating: 5,
-      product: 'Kareppee Hotlado & Coklat',
+      product: 'Kareppee Pedas Daun Jeruk',
       review: 'Barang datang dengan cepat, aman dan rasanya enakk banget jadi ketagihan, thank you so much!'
     },
     {
       id: 4,
-      name: 'Ahfauzi',
-      avatar: 'A',
+      name: 'Farsya Arrayyan',
+      avatar: 'FA',
       rating: 5,
       product: 'Kareppee Hotlado',
       review: 'Enak poooolll, ga nyangka si rasanya, baru nyobain Kareppee pertama kali😋 Cocok di lidahku.'
@@ -59,7 +59,7 @@ export default function Reviews() {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Testimoni dari pelanggan setia Kareppee Crunch yang telah merasakan kelezatan keripik singkong premium kami
+            Testimoni dari pelanggan setia Kareppee Crunch yang telah merasakan kelezatan kerupuk singkong premium kami
           </p>
         </div>
 
