@@ -56,7 +56,7 @@ export default function Story() {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Kareppee produsen kerupuk singkong asli Gowa dengan kualitas premium
+            Kareppee Crunch adalah produsen kerupuk singkong asli Gowa dengan kualitas premium
           </p>
 
           {/* Business Type */}
