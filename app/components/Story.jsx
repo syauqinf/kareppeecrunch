@@ -46,8 +46,8 @@ export default function Story() {
     <section id="about" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-6">
+        <div className="text-center mb-16" data-aos="fade-up" data-aos-duration="700">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-6 animate-scale-in" data-aos="zoom-in" data-aos-duration="600">
             <Award className="w-8 h-8 text-orange-600" />
           </div>
           
@@ -60,7 +60,7 @@ export default function Story() {
           </p>
 
           {/* Business Type */}
-          <div className="inline-flex items-center bg-orange-600 text-white px-6 py-3 rounded-full mt-6">
+          <div className="inline-flex items-center bg-orange-600 text-white px-6 py-3 rounded-full mt-6 animate-scroll-in" data-aos="fade-up" data-aos-delay="200">
             <span className="text-lg font-semibold">Kerupuk Singkong</span>
           </div>
         </div>
@@ -68,8 +68,8 @@ export default function Story() {
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Business Description */}
-          <div>
-            <div className="bg-gray-50 rounded-2xl p-8">
+          <div data-aos="fade-right" data-aos-duration="700">
+            <div className="bg-gray-50 rounded-2xl p-8 hover-lift transition-all duration-300">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Ringkasan Usaha
               </h3>
@@ -94,11 +94,11 @@ export default function Story() {
           </div>
 
           {/* Business Details */}
-          <div className="space-y-4">
+          <div className="space-y-4" data-aos="fade-left" data-aos-duration="700">
             {businessInfo.map((info, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+              <div key={index} className="bg-gray-50 rounded-xl p-6 border border-gray-200 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-duration="600" data-aos-delay={index * 100}>
                 <div className="flex items-start space-x-4">
-                  <div className={`${info.color} w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0`}>
+                  <div className={`${info.color} w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 hover-scale`}>
                     <info.icon className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
@@ -112,7 +112,7 @@ export default function Story() {
         </div>
 
         {/* Values Section */}
-        <div className="bg-orange-50 rounded-2xl p-12">
+        <div className="bg-orange-50 rounded-2xl p-12 hover-lift transition-all duration-300" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Nilai-Nilai Kami</h3>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -122,9 +122,9 @@ export default function Story() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="text-center h-full">
-                <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 h-full flex flex-col">
-                  <div className="bg-orange-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div key={index} className="text-center h-full" data-aos="fade-up" data-aos-duration="600" data-aos-delay={index * 100}>
+                <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 h-full flex flex-col hover-lift transition-all duration-300">
+                  <div className="bg-orange-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 hover-scale transition-transform duration-300">
                     <value.icon className="w-8 h-8 text-white" />
                   </div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-3">{value.title}</h4>

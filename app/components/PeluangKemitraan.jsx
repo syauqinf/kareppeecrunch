@@ -82,15 +82,15 @@ export default function PeluangKemitraan() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full mb-8 shadow-lg">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full mb-8 shadow-lg hover-scale" data-aos="zoom-in" data-aos-duration="600">
             <Star className="w-10 h-10 text-white" />
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4" data-aos="fade-up" data-aos-duration="700">
             Peluang <span className="text-orange-600">Reseller</span>
           </h2>
           
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
             Bergabung dengan ekosistem bisnis Kareppee Crunch dan raih kesuksesan finansial Anda
           </p>
         </div>
@@ -98,8 +98,14 @@ export default function PeluangKemitraan() {
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {benefits.map((benefit, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200">
-              <div className={`w-12 h-12 ${benefit.color} rounded-xl flex items-center justify-center mb-4`}>
+            <div 
+              key={index} 
+              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover-lift"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay={index * 100}
+            >
+              <div className={`w-12 h-12 ${benefit.color} rounded-xl flex items-center justify-center mb-4 hover-scale`}>
                 <benefit.icon className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
@@ -115,19 +121,25 @@ export default function PeluangKemitraan() {
         {/* Package Options */}
         <div className="mb-16">
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4" data-aos="fade-up" data-aos-duration="700">
               Pilihan Paket Reseller
             </h3>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
               Pilih paket yang sesuai dengan tujuan bisnis Anda
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {packages.map((pkg, index) => (
-              <div key={index} className={`relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 ${pkg.popular ? 'border-orange-500' : 'border-gray-200'}`}>
+              <div 
+                key={index} 
+                className={`relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 hover-lift ${pkg.popular ? 'border-orange-500' : 'border-gray-200'}`}
+                data-aos="fade-up"
+                data-aos-duration="600"
+                data-aos-delay={index * 150}
+              >
                 {pkg.popular && (
-                  <div className="absolute -top-3 right-4 bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-semibold">
+                  <div className="absolute -top-3 right-4 bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-semibold animate-float">
                     Best Seller
                   </div>
                 )}
@@ -147,7 +159,7 @@ export default function PeluangKemitraan() {
                   </p>
                   <button 
                     onClick={() => handleWhatsAppOrder(pkg.name.replace('Paket ', ''))}
-                    className="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center"
+                    className="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center hover-lift"
                   >
                     <MessageCircle className="w-4 h-4 mr-2" />
                     Pesan Paket Ini
@@ -161,18 +173,24 @@ export default function PeluangKemitraan() {
         {/* Facilities */}
         <div className="mb-16">
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4" data-aos="fade-up" data-aos-duration="700">
               Fasilitas Eksklusif
             </h3>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
               Dukungan penuh untuk kesuksesan bisnis Anda
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {facilities.map((facility, index) => (
-              <div key={index} className="bg-gradient-to-br from-orange-50 to-white rounded-xl p-6 border border-orange-200">
-                <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4">
+              <div 
+                key={index} 
+                className="bg-gradient-to-br from-orange-50 to-white rounded-xl p-6 border border-orange-200 hover-lift transition-all duration-300"
+                data-aos="fade-up"
+                data-aos-duration="600"
+                data-aos-delay={index * 100}
+              >
+                <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4 hover-scale">
                   <facility.icon className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">

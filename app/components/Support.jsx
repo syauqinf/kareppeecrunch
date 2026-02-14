@@ -49,8 +49,11 @@ const Support = () => {
                 <div className="flex items-center justify-center h-24">
                   <img 
                     src={partner.logo} 
-                    alt={partner.name} 
+                    alt={`${partner.name} - ${partner.description}`}
                     className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    width="150"
+                    height="96"
+                    loading="lazy"
                   />
                 </div>
               </div>

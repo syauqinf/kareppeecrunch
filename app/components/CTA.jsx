@@ -42,19 +42,19 @@ export default function CTA() {
     }
   ]
   return (
-    <section id="cta" className="py-12 md:py-16 bg-orange-600">
+    <section id="cta" className="py-12 md:py-16 bg-gradient-to-r from-orange-600 to-orange-700">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4" data-aos="fade-up">
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4 animate-slide-in-left" data-aos="fade-up" data-aos-duration="700">
           Yuk, Coba <span className="text-orange-100">Kareppee Crunch</span> Sekarang!
         </h2>
-        <p className="text-base md:text-lg text-orange-100 mb-6 md:mb-8 max-w-xl md:max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        <p className="text-base md:text-lg text-orange-100 mb-6 md:mb-8 max-w-xl md:max-w-2xl mx-auto" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
           Kerupuk singkong renyah dengan berbagai varian rasa. Dijamin bikin nagih!
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-6 md:mb-8" data-aos="fade-up" data-aos-delay="200">
+        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-6 md:mb-8" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
           <button 
             onClick={handleBuyNow}
-            className="bg-white text-orange-600 hover:bg-orange-50 font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg transition-colors duration-200 flex items-center justify-center text-sm md:text-base"
+            className="bg-white text-orange-600 hover:bg-orange-50 font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg transition-all duration-300 flex items-center justify-center text-sm md:text-base hover-lift"
           >
             <ShoppingCart className="w-4 h-4 md:w-5 md:h-5 mr-2" />
             Beli Sekarang
@@ -62,23 +62,23 @@ export default function CTA() {
           
           <button 
             onClick={handleContactMinka}
-            className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-orange-600 font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg transition-all duration-200 flex items-center justify-center text-sm md:text-base"
+            className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-orange-600 font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg transition-all duration-300 flex items-center justify-center text-sm md:text-base hover-lift"
           >
             <MessageCircle className="w-4 h-4 md:w-5 md:h-5 mr-2" />
             Hubungi Minka
           </button>
         </div>
 
-        <div className="flex justify-center space-x-8 text-orange-100">
-          <div className="flex items-center">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-orange-100" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+          <div className="flex items-center animate-float">
             <Star className="w-5 h-5 text-yellow-400 fill-current mr-2" />
             <span>5.0 Rating</span>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center animate-float" style={{ animationDelay: '0.5s' }}>
             <Truck className="w-5 h-5 mr-2" />
             <span>Pengiriman Cepat</span>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center animate-float" style={{ animationDelay: '1s' }}>
             <Check className="w-5 h-5 mr-2" />
             <span>HALAL</span>
           </div>
@@ -87,8 +87,8 @@ export default function CTA() {
 
       {/* Marketplace Popup */}
       {showPopup && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in duration-200">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 animate-fade-in">
+          <div className="bg-white rounded-2xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto animate-scale-in shadow-2xl">
             {/* Header */}
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-2xl font-bold text-gray-900">
@@ -96,7 +96,7 @@ export default function CTA() {
               </h3>
               <button
                 onClick={handleClosePopup}
-                className="text-gray-400 hover:text-gray-600 transition-colors p-2 rounded-full hover:bg-gray-100"
+                className="text-gray-400 hover:text-gray-600 transition-all duration-300 p-2 rounded-full hover:bg-gray-100 hover-scale"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -115,7 +115,8 @@ export default function CTA() {
                   href={marketplace.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${marketplace.color} text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-lg flex items-center justify-center text-center`}
+                  className={`${marketplace.color} text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center justify-center text-center animate-fade-in`}
+                  style={{ animationDelay: `${index * 50}ms` }}
                 >
                   {marketplace.name}
                 </a>

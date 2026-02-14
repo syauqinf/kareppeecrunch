@@ -40,7 +40,7 @@ export default function Hero() {
         <div className="max-w-7xl mx-auto w-full px-6 pb-20 text-white">
           
           {/* Brand Name */}
-          <h1 className="text-4xl md:text-5xl font-semibold tracking-[-0.015em]">
+          <h1 className="text-4xl md:text-5xl font-semibold tracking-[-0.015em] animate-slide-in-left" data-aos="fade-up" data-aos-duration="800">
             Kareppee Crunch
           </h1>
 
@@ -48,7 +48,10 @@ export default function Hero() {
           {isClient && (
             <button 
               onClick={handleDiscoverClick}
-              className="mt-5 inline-block text-xs uppercase tracking-widest border border-white/70 px-6 py-2 rounded-full hover:bg-white hover:text-black transition cursor-pointer"
+              className="mt-5 inline-block text-xs uppercase tracking-widest border border-white/70 px-6 py-2 rounded-full hover:bg-white hover:text-black transition-all duration-300 hover-lift animate-fade-in"
+              data-aos="fade-up"
+              data-aos-duration="800"
+              data-aos-delay="200"
             >
               Discover
             </button>
@@ -57,8 +60,8 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70">
-        <ChevronDown className="w-5 h-5 animate-bounce" />
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 animate-bounce-gentle">
+        <ChevronDown className="w-5 h-5" />
       </div>
 
     </section>

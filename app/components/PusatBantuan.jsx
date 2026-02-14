@@ -36,7 +36,7 @@ export default function PusatBantuan() {
   return (
     <section id="pusat-bantuan" className="py-20 bg-gradient-to-br from-orange-50 via-white to-orange-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up" data-aos-duration="700">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Pusat <span className="text-orange-600">Bantuan</span>
           </h2>
@@ -45,12 +45,14 @@ export default function PusatBantuan() {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
           {/* FAQ Section */}
-          <div className="bg-white rounded-2xl shadow-lg p-8">
+          <div className="bg-white rounded-2xl shadow-lg p-8 hover-lift transition-all duration-300">
             <div className="flex items-center mb-6">
-              <HelpCircle className="w-6 h-6 text-orange-600 mr-3" />
-              <h3 className="text-2xl font-bold text-gray-900">
+              <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                <HelpCircle className="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 ml-4">
                 Pertanyaan yang Sering Diajukan
               </h3>
             </div>
@@ -59,18 +61,21 @@ export default function PusatBantuan() {
               {faqs.map((faq, index) => (
                 <div
                   key={index}
-                  className="border border-orange-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow duration-300"
+                  className="border border-orange-100 rounded-xl overflow-hidden hover:shadow-md transition-all duration-300 hover-lift"
+                  data-aos="fade-up"
+                  data-aos-duration="600"
+                  data-aos-delay={index * 50}
                 >
                   <button
                     onClick={() => toggleFAQ(index)}
-                    className="w-full px-6 py-4 text-left bg-gradient-to-r from-orange-50 to-white hover:from-orange-100 hover:to-orange-50 transition-colors duration-300 flex items-center justify-between"
+                    className="w-full px-6 py-4 text-left bg-gradient-to-r from-orange-50 to-white hover:from-orange-100 hover:to-orange-50 transition-all duration-300 flex items-center justify-between"
                   >
                     <span className="font-semibold text-gray-900 pr-4">
                       {faq.question}
                     </span>
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 transition-transform duration-300">
                       {openIndex === index ? (
-                        <ChevronUp className="w-5 h-5 text-orange-600" />
+                        <ChevronUp className="w-5 h-5 text-orange-600 animate-bounce-gentle" />
                       ) : (
                         <ChevronDown className="w-5 h-5 text-orange-600" />
                       )}
@@ -78,7 +83,7 @@ export default function PusatBantuan() {
                   </button>
                   
                   {openIndex === index && (
-                    <div className="px-6 py-4 bg-white border-t border-orange-100">
+                    <div className="px-6 py-4 bg-white border-t border-orange-100 animate-slide-up">
                       <p className="text-gray-700 leading-relaxed">
                         {faq.answer}
                       </p>

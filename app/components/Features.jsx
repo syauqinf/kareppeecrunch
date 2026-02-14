@@ -45,7 +45,7 @@ export default function Features() {
   return (
     <section id="features" className="py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up" data-aos-duration="700">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Nilai <span className="text-orange-600">Unggulan</span> Kami
           </h2>
@@ -56,9 +56,9 @@ export default function Features() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100">
+            <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover-lift" data-aos="fade-up" data-aos-duration="600" data-aos-delay={index * 100}>
               <div className="flex items-start space-x-4">
-                <div className={`${feature.color} w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0`}>
+                <div className={`${feature.color} w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 hover-scale`}>
                   <feature.icon className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex-1">

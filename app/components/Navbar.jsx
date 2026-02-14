@@ -34,8 +34,11 @@ export default function Navbar() {
           <div className="flex items-center">
             <img 
               src="/images/logo.png" 
-              alt="Kareppeee Crunch" 
+              alt="Kareppee Crunch - Kerupuk Singkong Premium" 
               className="h-8 w-auto"
+              width="120"
+              height="32"
+              loading="eager"
             />
           </div>
 
