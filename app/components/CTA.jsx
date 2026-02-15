@@ -2,6 +2,7 @@
 
 import { ShoppingCart, Star, Truck, Check, X, MessageCircle } from 'lucide-react'
 import { useState } from 'react'
+import { AnimateOnScroll, StaggerContainer, StaggerItem } from './MotionWrappers'
 
 export default function CTA() {
   const [showPopup, setShowPopup] = useState(false)
@@ -42,53 +43,66 @@ export default function CTA() {
     }
   ]
   return (
-    <section id="cta" className="py-12 md:py-16 bg-orange-600">
+    <section id="cta" className="py-12 md:py-16 bg-orange-600" aria-label="Beli Kareppee Crunch sekarang">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4" data-aos="fade-up">
-          Yuk, Coba <span className="text-orange-100">Kareppee Crunch</span> Sekarang!
-        </h2>
-        <p className="text-base md:text-lg text-orange-100 mb-6 md:mb-8 max-w-xl md:max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-          Kerupuk singkong renyah dengan berbagai varian rasa. Dijamin bikin nagih!
-        </p>
+        <AnimateOnScroll>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4">
+            Yuk, Coba <span className="text-orange-100">Kareppee Crunch</span> Sekarang!
+          </h2>
+        </AnimateOnScroll>
+        <AnimateOnScroll delay={0.1}>
+          <p className="text-base md:text-lg text-orange-100 mb-6 md:mb-8 max-w-xl md:max-w-2xl mx-auto">
+            Kerupuk singkong renyah dengan berbagai varian rasa. Dijamin bikin nagih!
+          </p>
+        </AnimateOnScroll>
 
-        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-6 md:mb-8" data-aos="fade-up" data-aos-delay="200">
-          <button 
-            onClick={handleBuyNow}
-            className="bg-white text-orange-600 hover:bg-orange-50 font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg transition-colors duration-200 flex items-center justify-center text-sm md:text-base"
-          >
-            <ShoppingCart className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-            Beli Sekarang
-          </button>
-          
-          <button 
-            onClick={handleContactMinka}
-            className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-orange-600 font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg transition-all duration-200 flex items-center justify-center text-sm md:text-base"
-          >
-            <MessageCircle className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-            Hubungi Minka
-          </button>
-        </div>
+        <AnimateOnScroll delay={0.2}>
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-6 md:mb-8">
+            <button 
+              onClick={handleBuyNow}
+              aria-label="Beli Kareppee Crunch sekarang"
+              className="min-h-[48px] bg-white text-orange-600 hover:bg-orange-50 font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg transition-colors duration-200 flex items-center justify-center text-sm md:text-base"
+            >
+              <ShoppingCart className="w-4 h-4 md:w-5 md:h-5 mr-2" aria-hidden="true" />
+              Beli Sekarang
+            </button>
+            
+            <button 
+              onClick={handleContactMinka}
+              aria-label="Hubungi Minka via WhatsApp"
+              className="min-h-[48px] bg-transparent border-2 border-white text-white hover:bg-white hover:text-orange-600 font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg transition-all duration-200 flex items-center justify-center text-sm md:text-base"
+            >
+              <MessageCircle className="w-4 h-4 md:w-5 md:h-5 mr-2" aria-hidden="true" />
+              Hubungi Minka
+            </button>
+          </div>
+        </AnimateOnScroll>
 
-        <div className="flex justify-center space-x-8 text-orange-100">
-          <div className="flex items-center">
-            <Star className="w-5 h-5 text-yellow-400 fill-current mr-2" />
+        <StaggerContainer className="flex justify-center space-x-8 text-orange-100">
+          <StaggerItem className="flex items-center">
+            <Star className="w-5 h-5 text-yellow-400 fill-current mr-2" aria-hidden="true" />
             <span>5.0 Rating</span>
-          </div>
-          <div className="flex items-center">
-            <Truck className="w-5 h-5 mr-2" />
+          </StaggerItem>
+          <StaggerItem className="flex items-center">
+            <Truck className="w-5 h-5 mr-2" aria-hidden="true" />
             <span>Pengiriman Cepat</span>
-          </div>
-          <div className="flex items-center">
-            <Check className="w-5 h-5 mr-2" />
+          </StaggerItem>
+          <StaggerItem className="flex items-center">
+            <Check className="w-5 h-5 mr-2" aria-hidden="true" />
             <span>HALAL</span>
-          </div>
-        </div>
+          </StaggerItem>
+        </StaggerContainer>
       </div>
 
       {/* Marketplace Popup */}
       {showPopup && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in duration-200">
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Pilih marketplace untuk membeli Kareppee Crunch"
+            className="bg-white rounded-2xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in duration-200"
+          >
             {/* Header */}
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-2xl font-bold text-gray-900">
@@ -96,9 +110,10 @@ export default function CTA() {
               </h3>
               <button
                 onClick={handleClosePopup}
-                className="text-gray-400 hover:text-gray-600 transition-colors p-2 rounded-full hover:bg-gray-100"
+                aria-label="Tutup popup marketplace"
+                className="min-h-[48px] text-gray-400 hover:text-gray-600 transition-colors p-2 rounded-full hover:bg-gray-100"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5" aria-hidden="true" />
               </button>
             </div>
 
@@ -115,7 +130,8 @@ export default function CTA() {
                   href={marketplace.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${marketplace.color} text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-lg flex items-center justify-center text-center`}
+                  aria-label={`Beli di ${marketplace.name}`}
+                  className={`${marketplace.color} min-h-[48px] text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-lg flex items-center justify-center text-center`}
                 >
                   {marketplace.name}
                 </a>

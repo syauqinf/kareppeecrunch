@@ -1,6 +1,7 @@
 'use client'
 
 import { Leaf, Award, Clock, Truck, Users, CheckCircle, Sparkles, HandHeart, FileCheck, Globe } from 'lucide-react'
+import { AnimateOnScroll, StaggerContainer, StaggerItem } from './MotionWrappers'
 
 export default function Features() {
   const features = [
@@ -43,36 +44,38 @@ export default function Features() {
   ]
 
   return (
-    <section id="features" className="py-16 bg-gray-50">
+    <section id="features" className="py-16 bg-gray-50" aria-label="Nilai unggulan Kareppee Crunch">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <AnimateOnScroll className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Nilai <span className="text-orange-600">Unggulan</span> Kami
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Keunggulan yang membuat Kareppee Crunch berbeda dan terpercaya
           </p>
-        </div>
+        </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100">
-              <div className="flex items-start space-x-4">
-                <div className={`${feature.color} w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0`}>
-                  <feature.icon className="w-6 h-6 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 leading-tight">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {feature.description}
-                  </p>
+            <StaggerItem key={index}>
+              <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-500 ease-out border border-gray-100">
+                <div className="flex items-start space-x-4">
+                  <div className={`${feature.color} w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0`}>
+                    <feature.icon className="w-6 h-6 text-white" aria-hidden="true" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 leading-tight">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   )

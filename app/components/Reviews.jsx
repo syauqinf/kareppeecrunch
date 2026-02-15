@@ -1,6 +1,7 @@
 'use client'
 
 import { Star, Quote, Heart } from 'lucide-react'
+import { AnimateOnScroll, StaggerContainer, StaggerItem } from './MotionWrappers'
 
 export default function Reviews() {
   const reviews = [
@@ -49,9 +50,9 @@ export default function Reviews() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <AnimateOnScroll className="text-center mb-16">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-6">
-            <Heart className="w-8 h-8 text-orange-600" />
+            <Heart className="w-8 h-8 text-orange-600" aria-hidden="true" />
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -61,16 +62,16 @@ export default function Reviews() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Testimoni dari pelanggan setia Kareppee Crunch yang telah merasakan kelezatan kerupuk singkong premium kami
           </p>
-        </div>
+        </AnimateOnScroll>
 
         {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {reviews.map((review, index) => (
-            <div key={review.id} className="group relative">
+            <StaggerItem key={review.id} className="group relative">
               {/* Card */}
               <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-orange-100 hover:border-orange-300 h-full flex flex-col relative overflow-hidden">
                 {/* Quote Icon */}
-                <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
+                <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-500 ease-out">
                   <Quote className="w-8 h-8 text-orange-600" />
                 </div>
 
@@ -114,37 +115,39 @@ export default function Reviews() {
 
               {/* Hover Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-orange-400/20 to-orange-600/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         {/* Stats Section */}
-        <div className="bg-gradient-to-r from-orange-600 to-orange-700 rounded-3xl p-12 text-white text-center shadow-2xl relative overflow-hidden">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-4 left-4 w-16 h-16 bg-white rounded-full"></div>
-            <div className="absolute bottom-4 right-4 w-12 h-12 bg-white rounded-full"></div>
-          </div>
+        <AnimateOnScroll>
+          <div className="bg-gradient-to-r from-orange-600 to-orange-700 rounded-3xl p-12 text-white text-center shadow-2xl relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-4 left-4 w-16 h-16 bg-white rounded-full"></div>
+              <div className="absolute bottom-4 right-4 w-12 h-12 bg-white rounded-full"></div>
+            </div>
 
-          <div className="relative z-10">
-            <h3 className="text-2xl font-bold mb-8">Dipercaya oleh Para Pelanggan</h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="group">
-                <div className="text-4xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">Semua</div>
-                <div className="text-orange-100">Pelanggan Puas</div>
-              </div>
-              <div className="group">
-                <div className="text-4xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">5.0</div>
-                <div className="text-orange-100">Rating Rata-rata</div>
-              </div>
-              <div className="group">
-                <div className="text-4xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">98%</div>
-                <div className="text-orange-100">Repeat Order</div>
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold mb-8">Dipercaya oleh Para Pelanggan</h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="group">
+                  <div className="text-4xl font-bold mb-2 group-hover:scale-110 transition-transform duration-500 ease-out">Semua</div>
+                  <div className="text-orange-100">Pelanggan Puas</div>
+                </div>
+                <div className="group">
+                  <div className="text-4xl font-bold mb-2 group-hover:scale-110 transition-transform duration-500 ease-out">5.0</div>
+                  <div className="text-orange-100">Rating Rata-rata</div>
+                </div>
+                <div className="group">
+                  <div className="text-4xl font-bold mb-2 group-hover:scale-110 transition-transform duration-500 ease-out">98%</div>
+                  <div className="text-orange-100">Repeat Order</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </AnimateOnScroll>
       </div>
     </section>
   )

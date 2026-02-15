@@ -1,6 +1,7 @@
 'use client'
 
 import { Shield, FileCheck, Award, CheckCircle, Download, Eye } from 'lucide-react'
+import { AnimateOnScroll, StaggerContainer, StaggerItem } from './MotionWrappers'
 
 export default function Legalitas() {
   const legalDocuments = [
@@ -35,12 +36,12 @@ export default function Legalitas() {
   }
 
   return (
-    <section id="legalitas" className="py-12 bg-gray-50">
+    <section id="legalitas" className="py-12 bg-gray-50" aria-label="Legalitas dan sertifikasi Kareppee Crunch">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-10" data-aos="fade-up">
+        <AnimateOnScroll className="text-center mb-10">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6 shadow-lg">
-            <CheckCircle className="w-8 h-8 text-white" />
+            <CheckCircle className="w-8 h-8 text-white" aria-hidden="true" />
           </div>
           
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
@@ -50,17 +51,17 @@ export default function Legalitas() {
           <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
             Dokumen resmi yang menjamin kualitas dan keamanan produk kami
           </p>
-        </div>
+        </AnimateOnScroll>
 
         {/* Legal Documents Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {legalDocuments.map((doc, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 overflow-hidden flex flex-col h-full" data-aos="fade-up" data-aos-delay={index * 100}>
+            <StaggerItem key={index} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-500 ease-out border border-gray-200 overflow-hidden flex flex-col h-full">
               {/* Header */}
               <div className="p-6 border-b border-gray-100">
                 <div className="flex items-center mb-4">
                   <div className={`w-12 h-12 ${doc.color} rounded-lg flex items-center justify-center mr-3`}>
-                    <doc.icon className="w-6 h-6 text-white" />
+                    <doc.icon className="w-6 h-6 text-white" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-gray-900">
@@ -77,7 +78,7 @@ export default function Legalitas() {
               <div className="p-4 bg-gray-50 border-b border-gray-100 flex-grow">
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 bg-gray-200 rounded flex items-center justify-center flex-shrink-0 mt-1">
-                    <FileCheck className="w-4 h-4 text-gray-600" />
+                    <FileCheck className="w-4 h-4 text-gray-600" aria-hidden="true" />
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     {doc.preview}
@@ -89,25 +90,26 @@ export default function Legalitas() {
               <div className="p-4 bg-gray-50 mt-auto">
                 <button 
                   onClick={() => handleViewDocument(doc.file)}
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center"
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center min-h-[48px]"
+                  aria-label={`Lihat dokumen ${doc.title}`}
                 >
-                  <Eye className="w-4 h-4 mr-2" />
+                  <Eye className="w-4 h-4 mr-2" aria-hidden="true" />
                   Lihat Dokumen
                 </button>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         {/* Trust Badge */}
-        <div className="text-center" data-aos="fade-up" data-aos-delay="300">
+        <AnimateOnScroll className="text-center" delay={0.3}>
           <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 rounded-full px-4 py-2">
-            <CheckCircle className="w-4 h-4 text-green-600" />
+            <CheckCircle className="w-4 h-4 text-green-600" aria-hidden="true" />
             <span className="text-green-800 font-medium text-sm">
               100% Legal dan Terpercaya
             </span>
           </div>
-        </div>
+        </AnimateOnScroll>
       </div>
     </section>
   )

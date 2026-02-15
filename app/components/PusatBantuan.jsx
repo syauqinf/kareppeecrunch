@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { ChevronDown, ChevronUp, HelpCircle, MessageCircle, Phone, Mail } from 'lucide-react'
+import { AnimateOnScroll, StaggerContainer, StaggerItem } from './MotionWrappers'
 
 export default function PusatBantuan() {
   const [openIndex, setOpenIndex] = useState(null)
@@ -34,51 +35,54 @@ export default function PusatBantuan() {
   }
 
   return (
-    <section id="pusat-bantuan" className="py-20 bg-gradient-to-br from-orange-50 via-white to-orange-50">
+    <section id="pusat-bantuan" className="py-20 bg-gradient-to-br from-orange-50 via-white to-orange-50" aria-label="Pusat bantuan dan FAQ Kareppee Crunch">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <AnimateOnScroll className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Pusat <span className="text-orange-600">Bantuan</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Temukan jawaban untuk pertanyaan yang sering diajukan
           </p>
-        </div>
+        </AnimateOnScroll>
 
-        <div className="max-w-4xl mx-auto">
+        <AnimateOnScroll className="max-w-4xl mx-auto">
           {/* FAQ Section */}
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <div className="flex items-center mb-6">
-              <HelpCircle className="w-6 h-6 text-orange-600 mr-3" />
+              <HelpCircle className="w-6 h-6 text-orange-600 mr-3" aria-hidden="true" />
               <h3 className="text-2xl font-bold text-gray-900">
                 Pertanyaan yang Sering Diajukan
               </h3>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4" role="list">
               {faqs.map((faq, index) => (
                 <div
                   key={index}
-                  className="border border-orange-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow duration-300"
+                  role="listitem"
+                  className="border border-orange-100 rounded-xl overflow-hidden hover:shadow-md transition-all duration-500 ease-out"
                 >
                   <button
                     onClick={() => toggleFAQ(index)}
-                    className="w-full px-6 py-4 text-left bg-gradient-to-r from-orange-50 to-white hover:from-orange-100 hover:to-orange-50 transition-colors duration-300 flex items-center justify-between"
+                    aria-expanded={openIndex === index}
+                    aria-controls={`faq-answer-${index}`}
+                    className="w-full px-6 py-4 text-left bg-gradient-to-r from-orange-50 to-white hover:from-orange-100 hover:to-orange-50 transition-all duration-400 ease-out flex items-center justify-between min-h-[48px]"
                   >
                     <span className="font-semibold text-gray-900 pr-4">
                       {faq.question}
                     </span>
                     <div className="flex-shrink-0">
                       {openIndex === index ? (
-                        <ChevronUp className="w-5 h-5 text-orange-600" />
+                        <ChevronUp className="w-5 h-5 text-orange-600" aria-hidden="true" />
                       ) : (
-                        <ChevronDown className="w-5 h-5 text-orange-600" />
+                        <ChevronDown className="w-5 h-5 text-orange-600" aria-hidden="true" />
                       )}
                     </div>
                   </button>
                   
                   {openIndex === index && (
-                    <div className="px-6 py-4 bg-white border-t border-orange-100">
+                    <div id={`faq-answer-${index}`} className="px-6 py-4 bg-white border-t border-orange-100">
                       <p className="text-gray-700 leading-relaxed">
                         {faq.answer}
                       </p>
@@ -88,7 +92,7 @@ export default function PusatBantuan() {
               ))}
             </div>
           </div>
-        </div>
+        </AnimateOnScroll>
       </div>
     </section>
   )

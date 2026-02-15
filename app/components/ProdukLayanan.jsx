@@ -1,6 +1,7 @@
 'use client'
 
 import { Package, ChefHat, Gift, Users } from 'lucide-react'
+import { AnimateOnScroll, StaggerContainer, StaggerItem } from './MotionWrappers'
 
 export default function ProdukLayanan() {
   const handleSmoothScroll = (e, href) => {
@@ -49,12 +50,12 @@ export default function ProdukLayanan() {
   ]
 
   return (
-    <section id="produk-layanan" className="py-20 bg-gradient-to-br from-gray-50 via-white to-orange-50">
+    <section id="produk-layanan" className="py-20 bg-gradient-to-br from-gray-50 via-white to-orange-50" aria-label="Produk dan layanan Kareppee Crunch">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <AnimateOnScroll className="text-center mb-16">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-6">
-            <Package className="w-8 h-8 text-orange-600" />
+            <Package className="w-8 h-8 text-orange-600" aria-hidden="true" />
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -64,17 +65,17 @@ export default function ProdukLayanan() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Produk utama dan layanan unggulan dari Kareppee Crunch
           </p>
-        </div>
+        </AnimateOnScroll>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {services.map((service, index) => (
-            <div key={service.id} className="group relative">
+            <StaggerItem key={service.id} className="group relative">
               {/* Service Card */}
               <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-orange-300 h-full flex flex-col relative overflow-hidden">
                 {/* Icon */}
-                <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="w-8 h-8 text-white" />
+                <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 ease-out`}>
+                  <service.icon className="w-8 h-8 text-white" aria-hidden="true" />
                 </div>
 
                 {/* Content */}
@@ -101,12 +102,12 @@ export default function ProdukLayanan() {
 
               {/* Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-orange-400/5 to-orange-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         {/* CTA Section */}
-        <div className="text-center">
+        <AnimateOnScroll className="text-center">
           <div className="bg-gradient-to-r from-orange-600 to-orange-700 rounded-3xl p-12 text-white shadow-2xl">
             <h3 className="text-2xl font-bold mb-4">
               Tertarik dengan Produk dan Layanan Kami?
@@ -118,13 +119,14 @@ export default function ProdukLayanan() {
               onClick={(e) => {
                 handleSmoothScroll(e, '#products')
               }}
-              className="bg-white text-orange-700 hover:bg-orange-50 font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 inline-flex items-center"
+              aria-label="Lihat semua produk Kareppee Crunch"
+              className="bg-white text-orange-700 hover:bg-orange-50 font-bold py-4 px-8 rounded-xl transition-all duration-500 ease-out transform hover:scale-105 inline-flex items-center min-h-[48px]"
             >
-              <Package className="w-5 h-5 mr-2" />
+              <Package className="w-5 h-5 mr-2" aria-hidden="true" />
               Lihat Semua Produk
             </button>
           </div>
-        </div>
+        </AnimateOnScroll>
       </div>
     </section>
   )

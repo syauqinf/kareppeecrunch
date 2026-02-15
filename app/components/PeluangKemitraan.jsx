@@ -1,6 +1,7 @@
 'use client'
 
 import { Users, TrendingUp, Shield, Zap, Package, CheckCircle, Phone, Star, ArrowRight, MessageCircle } from 'lucide-react'
+import { AnimateOnScroll, StaggerContainer, StaggerItem } from './MotionWrappers'
 
 export default function PeluangKemitraan() {
   const handleWhatsAppOrder = (packageName) => {
@@ -78,12 +79,12 @@ export default function PeluangKemitraan() {
   ]
 
   return (
-    <section id="peluang-kemitraan" className="py-20 bg-gradient-to-br from-gray-50 to-orange-50">
+    <section id="peluang-kemitraan" className="py-20 bg-gradient-to-br from-gray-50 to-orange-50" aria-label="Peluang reseller Kareppee Crunch">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <AnimateOnScroll className="text-center mb-16">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full mb-8 shadow-lg">
-            <Star className="w-10 h-10 text-white" />
+            <Star className="w-10 h-10 text-white" aria-hidden="true" />
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -93,14 +94,14 @@ export default function PeluangKemitraan() {
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Bergabung dengan ekosistem bisnis Kareppee Crunch dan raih kesuksesan finansial Anda
           </p>
-        </div>
+        </AnimateOnScroll>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {benefits.map((benefit, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+            <StaggerItem key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 ease-out border border-gray-200">
               <div className={`w-12 h-12 ${benefit.color} rounded-xl flex items-center justify-center mb-4`}>
-                <benefit.icon className="w-6 h-6 text-white" />
+                <benefit.icon className="w-6 h-6 text-white" aria-hidden="true" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {benefit.title}
@@ -108,12 +109,12 @@ export default function PeluangKemitraan() {
               <p className="text-gray-600 text-sm leading-relaxed">
                 {benefit.description}
               </p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         {/* Package Options */}
-        <div className="mb-16">
+        <AnimateOnScroll className="mb-16">
           <div className="text-center mb-12">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Pilihan Paket Reseller
@@ -125,7 +126,7 @@ export default function PeluangKemitraan() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {packages.map((pkg, index) => (
-              <div key={index} className={`relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 ${pkg.popular ? 'border-orange-500' : 'border-gray-200'}`}>
+              <div key={index} className={`relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 ease-out border-2 ${pkg.popular ? 'border-orange-500' : 'border-gray-200'}`}>
                 {pkg.popular && (
                   <div className="absolute -top-3 right-4 bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-semibold">
                     Best Seller
@@ -156,10 +157,10 @@ export default function PeluangKemitraan() {
               </div>
             ))}
           </div>
-        </div>
+        </AnimateOnScroll>
 
         {/* Facilities */}
-        <div className="mb-16">
+        <AnimateOnScroll className="mb-16">
           <div className="text-center mb-12">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Fasilitas Eksklusif
@@ -173,7 +174,7 @@ export default function PeluangKemitraan() {
             {facilities.map((facility, index) => (
               <div key={index} className="bg-gradient-to-br from-orange-50 to-white rounded-xl p-6 border border-orange-200">
                 <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4">
-                  <facility.icon className="w-6 h-6 text-white" />
+                  <facility.icon className="w-6 h-6 text-white" aria-hidden="true" />
                 </div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
                   {facility.title}
@@ -184,7 +185,7 @@ export default function PeluangKemitraan() {
               </div>
             ))}
           </div>
-        </div>
+        </AnimateOnScroll>
       </div>
     </section>
   )
