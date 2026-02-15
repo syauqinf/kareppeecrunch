@@ -54,11 +54,8 @@ const Footer = () => {
             <div className="flex items-center space-x-3 mb-4 md:mb-6">
               <img 
                 src="/images/logo.png" 
-                alt="Kareppee Crunch - Kerupuk Singkong Premium" 
+                alt="Kareppee Crunch" 
                 className="h-12 md:h-16 w-auto"
-                width="180"
-                height="64"
-                loading="lazy"
               />
             </div>
             
@@ -117,17 +114,17 @@ const Footer = () => {
             <div className="flex flex-col items-start gap-4">
               {/* Mitra 1 */}
               <div className="flex items-start justify-start w-32 h-16">
-                <img src="/images/dekat-lokal.png" alt="DekatLokal - Platform UMKM Lokal" className="max-h-full max-w-full object-contain" width="128" height="64" loading="lazy" />
+                <img src="/images/dekat-lokal.png" alt="DekatLokal" className="max-h-full max-w-full object-contain" />
               </div>
 
               {/* Mitra 2 */}
               <div className="flex items-start justify-start w-32 h-16">
-                <img src="/images/rumah-bumn.png" alt="Rumah BUMN Makassar - Inkubator Bisnis BUMN" className="max-h-full max-w-full object-contain" width="128" height="64" loading="lazy" />
+                <img src="/images/rumah-bumn.png" alt="Rumah BUMN" className="max-h-full max-w-full object-contain" />
               </div>
 
               {/* Mitra 3 */}
               <div className="flex items-start justify-start w-32 h-16">
-                <img src="/images/bank-bri.png" alt="Bank BRI - Mitra Perbankan" className="max-h-full max-w-full object-contain" width="128" height="64" loading="lazy" />
+                <img src="/images/bank-bri.png" alt="Bank BRI" className="max-h-full max-w-full object-contain" />
               </div>
             </div>
           </div>

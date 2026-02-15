@@ -49,8 +49,8 @@ export default function Reviews() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16" data-aos="fade-up" data-aos-duration="700">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-6 animate-scale-in" data-aos="zoom-in" data-aos-duration="600">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-6">
             <Heart className="w-8 h-8 text-orange-600" />
           </div>
           
@@ -66,9 +66,9 @@ export default function Reviews() {
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {reviews.map((review, index) => (
-            <div key={review.id} className="group relative" data-aos="fade-up" data-aos-duration="600" data-aos-delay={index * 100}>
+            <div key={review.id} className="group relative">
               {/* Card */}
-              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-orange-100 hover:border-orange-300 h-full flex flex-col relative overflow-hidden hover-lift">
+              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-orange-100 hover:border-orange-300 h-full flex flex-col relative overflow-hidden">
                 {/* Quote Icon */}
                 <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
                   <Quote className="w-8 h-8 text-orange-600" />
@@ -76,7 +76,7 @@ export default function Reviews() {
 
                 {/* Header */}
                 <div className="flex items-center mb-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4 shadow-lg hover-scale">
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4 shadow-lg">
                     {review.avatar}
                   </div>
                   <div>
@@ -119,7 +119,7 @@ export default function Reviews() {
         </div>
 
         {/* Stats Section */}
-        <div className="bg-gradient-to-r from-orange-600 to-orange-700 rounded-3xl p-12 text-white text-center shadow-2xl relative overflow-hidden hover-lift transition-all duration-300" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
+        <div className="bg-gradient-to-r from-orange-600 to-orange-700 rounded-3xl p-12 text-white text-center shadow-2xl relative overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-4 left-4 w-16 h-16 bg-white rounded-full"></div>
@@ -130,16 +130,16 @@ export default function Reviews() {
             <h3 className="text-2xl font-bold mb-8">Dipercaya oleh Para Pelanggan</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="group hover-scale cursor-default">
-                <div className="text-4xl font-bold mb-2 transition-transform duration-300">Semua</div>
+              <div className="group">
+                <div className="text-4xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">Semua</div>
                 <div className="text-orange-100">Pelanggan Puas</div>
               </div>
-              <div className="group hover-scale cursor-default">
-                <div className="text-4xl font-bold mb-2 transition-transform duration-300">5.0</div>
+              <div className="group">
+                <div className="text-4xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">5.0</div>
                 <div className="text-orange-100">Rating Rata-rata</div>
               </div>
-              <div className="group hover-scale cursor-default">
-                <div className="text-4xl font-bold mb-2 transition-transform duration-300">98%</div>
+              <div className="group">
+                <div className="text-4xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">98%</div>
                 <div className="text-orange-100">Repeat Order</div>
               </div>
             </div>

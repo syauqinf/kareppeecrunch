@@ -52,8 +52,8 @@ export default function ProdukLayanan() {
     <section id="produk-layanan" className="py-20 bg-gradient-to-br from-gray-50 via-white to-orange-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16" data-aos="fade-up" data-aos-duration="700">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-6 animate-scale-in" data-aos="zoom-in" data-aos-duration="600">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-6">
             <Package className="w-8 h-8 text-orange-600" />
           </div>
           
@@ -69,9 +69,9 @@ export default function ProdukLayanan() {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {services.map((service, index) => (
-            <div key={service.id} className="group relative" data-aos="fade-up" data-aos-duration="700" data-aos-delay={index * 150}>
+            <div key={service.id} className="group relative">
               {/* Service Card */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-orange-300 h-full flex flex-col relative overflow-hidden hover-lift">
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-orange-300 h-full flex flex-col relative overflow-hidden">
                 {/* Icon */}
                 <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <service.icon className="w-8 h-8 text-white" />
@@ -106,8 +106,8 @@ export default function ProdukLayanan() {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-          <div className="bg-gradient-to-r from-orange-600 to-orange-700 rounded-3xl p-12 text-white shadow-2xl hover-lift transition-all duration-300">
+        <div className="text-center">
+          <div className="bg-gradient-to-r from-orange-600 to-orange-700 rounded-3xl p-12 text-white shadow-2xl">
             <h3 className="text-2xl font-bold mb-4">
               Tertarik dengan Produk dan Layanan Kami?
             </h3>

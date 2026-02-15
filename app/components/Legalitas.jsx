@@ -38,8 +38,8 @@ export default function Legalitas() {
     <section id="legalitas" className="py-12 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-10" data-aos="fade-up" data-aos-duration="700">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6 shadow-lg animate-scale-in" data-aos="zoom-in" data-aos-duration="600">
+        <div className="text-center mb-10" data-aos="fade-up">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6 shadow-lg">
             <CheckCircle className="w-8 h-8 text-white" />
           </div>
           
@@ -55,11 +55,11 @@ export default function Legalitas() {
         {/* Legal Documents Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {legalDocuments.map((doc, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 overflow-hidden flex flex-col h-full hover-lift" data-aos="fade-up" data-aos-duration="600" data-aos-delay={index * 100}>
+            <div key={index} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 overflow-hidden flex flex-col h-full" data-aos="fade-up" data-aos-delay={index * 100}>
               {/* Header */}
               <div className="p-6 border-b border-gray-100">
                 <div className="flex items-center mb-4">
-                  <div className={`w-12 h-12 ${doc.color} rounded-lg flex items-center justify-center mr-3 hover-scale transition-transform duration-300`}>
+                  <div className={`w-12 h-12 ${doc.color} rounded-lg flex items-center justify-center mr-3`}>
                     <doc.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -89,7 +89,7 @@ export default function Legalitas() {
               <div className="p-4 bg-gray-50 mt-auto">
                 <button 
                   onClick={() => handleViewDocument(doc.file)}
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center justify-center hover-lift"
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center"
                 >
                   <Eye className="w-4 h-4 mr-2" />
                   Lihat Dokumen
@@ -100,8 +100,8 @@ export default function Legalitas() {
         </div>
 
         {/* Trust Badge */}
-        <div className="text-center" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-          <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 rounded-full px-4 py-2 hover-glow transition-all duration-300">
+        <div className="text-center" data-aos="fade-up" data-aos-delay="300">
+          <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 rounded-full px-4 py-2">
             <CheckCircle className="w-4 h-4 text-green-600" />
             <span className="text-green-800 font-medium text-sm">
               100% Legal dan Terpercaya

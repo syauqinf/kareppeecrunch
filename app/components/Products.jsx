@@ -63,7 +63,7 @@ export default function Products() {
   return (
     <section id="products" className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 md:mb-12" data-aos="fade-up" data-aos-duration="700">
+        <div className="text-center mb-8 md:mb-12" data-aos="fade-up">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
             Varian <span className="text-orange-600">Kareppee Crunch</span>
           </h2>
@@ -74,10 +74,10 @@ export default function Products() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
           {products.map((product, index) => (
-            <div key={product.id} className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 h-full flex flex-col hover-lift relative overflow-hidden" data-aos="fade-up" data-aos-duration="600" data-aos-delay={index * 100}>
+            <div key={product.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 h-full flex flex-col" data-aos="fade-up" data-aos-delay={index * 100}>
               {/* Badge */}
               {product.badge && (
-                <div className="absolute top-4 right-4 z-10 animate-fade-in">
+                <div className="absolute top-4 right-4 z-10">
                   <span className={`${
                     product.badge === 'Best Seller' ? 'bg-orange-500' :
                     product.badge === 'Hot' ? 'bg-red-500' :
@@ -92,14 +92,11 @@ export default function Products() {
               )}
 
               {/* Product Image - Square */}
-              <div className="relative aspect-square overflow-hidden bg-gray-100">
+              <div className="relative aspect-square overflow-hidden">
                 <img 
                   src={product.image}
-                  alt={`Kareppee Crunch ${product.name} - ${product.description}`}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  width="400"
-                  height="400"
-                  loading="lazy"
+                  alt={product.name}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
 
@@ -115,7 +112,7 @@ export default function Products() {
                 {/* Order Now Button */}
                 <button 
                   onClick={() => handleOrder(product.name)}
-                  className="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-2 md:py-3 px-3 md:px-4 rounded-lg transition-all duration-300 flex items-center justify-center mt-auto text-sm md:text-base hover-lift"
+                  className="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-2 md:py-3 px-3 md:px-4 rounded-lg transition-colors duration-200 flex items-center justify-center mt-auto text-sm md:text-base"
                 >
                   <MessageCircle className="w-3 h-3 md:w-4 md:h-4 mr-2" />
                   Order Sekarang
@@ -126,7 +123,7 @@ export default function Products() {
         </div>
 
         {/* View All Products Section */}
-        <div className="text-center" data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
+        <div className="text-center">
           <p className="text-sm text-gray-500 font-light">
             Katalog lengkap tersedia di{' '}
             <a 
