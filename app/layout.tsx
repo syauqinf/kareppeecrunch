@@ -8,7 +8,13 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const SITE_URL = "https://kareppeecrunch.com";
+const SITE_ORIGIN = "https://kareppeecrunch.dekatlokal.com";
+const SITE_URL = `${SITE_ORIGIN}/`;
+const SITE_NAME = "Kareppee Crunch";
+const SITE_TITLE =
+  "Kareppee Crunch - Kerupuk Singkong Premium Khas Makassar Gowa";
+const SITE_DESCRIPTION =
+  "Kareppee Crunch adalah kerupuk singkong premium khas Makassar Gowa yang renyah, halal, dan dibuat dari singkong pilihan. Tersedia 6 varian rasa untuk camilan, oleh-oleh, dan peluang reseller.";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -19,27 +25,37 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  applicationName: SITE_NAME,
   title: {
-    default: "Kareppee Crunch - Kerupuk Singkong Premium Khas Gowa Makassar",
-    template: "%s | Kareppee Crunch",
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`,
   },
-  description:
-    "Kerupuk singkong premium khas Gowa Makassar dengan 6 varian rasa unik. Bersertifikat Halal MUI, SPP-IRT & NIB. Pesan sekarang untuk camilan renyah favorit Anda!",
+  description: SITE_DESCRIPTION,
   keywords: [
+    "Kareppee Crunch",
     "kerupuk singkong",
     "kerupuk singkong premium",
+    "krupuk singkong premium",
+    "kerupuk singkong Makassar",
+    "kerupuk singkong Gowa",
     "camilan khas Makassar",
+    "camilan khas Gowa",
+    "oleh-oleh Makassar",
     "oleh-oleh Gowa",
-    "Kareppee Crunch",
     "kerupuk halal",
-    "camilan tradisional",
+    "kerupuk singkong halal",
+    "camilan singkong",
+    "snack singkong",
     "snack Indonesia",
-    "kerupuk renyah",
+    "camilan renyah",
     "camilan UMKM",
+    "reseller kerupuk singkong",
+    "kerupuk singkong pedas daun jeruk",
+    "kerupuk singkong original",
   ],
-  authors: [{ name: "Kareppee Crunch", url: SITE_URL }],
-  creator: "Kareppee Crunch",
-  publisher: "Kareppee Crunch",
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
   robots: {
     index: true,
     follow: true,
@@ -58,10 +74,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     url: SITE_URL,
-    siteName: "Kareppee Crunch",
-    title: "Kareppee Crunch - Kerupuk Singkong Premium Khas Gowa Makassar",
-    description:
-      "Kerupuk singkong premium khas Gowa Makassar dengan 6 varian rasa unik. Bersertifikat Halal MUI, SPP-IRT & NIB. Pesan sekarang!",
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     images: [
       {
         url: "/images/hero.jpeg",
@@ -73,13 +88,16 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kareppee Crunch - Kerupuk Singkong Premium Khas Gowa Makassar",
-    description:
-      "Kerupuk singkong premium khas Gowa Makassar dengan 6 varian rasa unik. Bersertifikat Halal MUI!",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     images: ["/images/hero.jpeg"],
   },
   icons: {
-    icon: { url: "/favicon.ico" },
+    icon: [
+      { url: "/images/logo.png", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: { url: "/images/logo.png", type: "image/png" },
     apple: { url: "/images/logo.png" },
   },
   manifest: "/manifest.json",
@@ -95,11 +113,10 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Kareppee Crunch",
+  name: SITE_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/images/logo.png`,
-  description:
-    "Produsen kerupuk singkong premium khas Gowa Makassar dengan kualitas modern dan cita rasa autentik.",
+  logo: `${SITE_ORIGIN}/images/logo.png`,
+  description: SITE_DESCRIPTION,
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+62882019886782",
@@ -116,8 +133,8 @@ const organizationSchema = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Kareppee Crunch",
-  image: `${SITE_URL}/images/hero.jpeg`,
+  name: SITE_NAME,
+  image: `${SITE_ORIGIN}/images/hero.jpeg`,
   url: SITE_URL,
   telephone: "+62882019886782",
   address: {
@@ -152,11 +169,12 @@ const localBusinessSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Kareppee Crunch",
+  name: SITE_NAME,
+  alternateName: "Kareppee Crunch krupuk singkong premium khas Makassar Gowa",
   url: SITE_URL,
   potentialAction: {
     "@type": "SearchAction",
-    target: `${SITE_URL}/?q={search_term_string}`,
+    target: `${SITE_URL}?q={search_term_string}`,
     "query-input": "required name=search_term_string",
   },
 };
@@ -188,7 +206,7 @@ const productSchema = {
         "@type": "Product",
         name: "Kareppee Crunch Original",
         description: "Kerupuk singkong rasa klasik autentik dengan gurih alami",
-        image: `${SITE_URL}/images/varian/original.jpg`,
+        image: `${SITE_ORIGIN}/images/varian/original.jpg`,
         brand: { "@type": "Brand", name: "Kareppee Crunch" },
         offers: {
           "@type": "Offer",
@@ -210,7 +228,7 @@ const productSchema = {
         "@type": "Product",
         name: "Kareppee Crunch Hotlado",
         description: "Perpaduan pedas dan gurih yang menggugah selera",
-        image: `${SITE_URL}/images/varian/hotlado.jpg`,
+        image: `${SITE_ORIGIN}/images/varian/hotlado.jpg`,
         brand: { "@type": "Brand", name: "Kareppee Crunch" },
         offers: {
           "@type": "Offer",
@@ -227,7 +245,7 @@ const productSchema = {
         "@type": "Product",
         name: "Kareppee Crunch Jagung Bakar",
         description: "Rasa manis gurih jagung bakar yang khas",
-        image: `${SITE_URL}/images/varian/jagungbakar.jpg`,
+        image: `${SITE_ORIGIN}/images/varian/jagungbakar.jpg`,
         brand: { "@type": "Brand", name: "Kareppee Crunch" },
         offers: {
           "@type": "Offer",
@@ -244,7 +262,7 @@ const productSchema = {
         "@type": "Product",
         name: "Kareppee Crunch Pedas Daun Jeruk",
         description: "Pedas segar dengan aroma daun jeruk yang unik",
-        image: `${SITE_URL}/images/varian/pedasdaunjeruk.jpg`,
+        image: `${SITE_ORIGIN}/images/varian/pedasdaunjeruk.jpg`,
         brand: { "@type": "Brand", name: "Kareppee Crunch" },
         offers: {
           "@type": "Offer",
@@ -261,7 +279,7 @@ const productSchema = {
         "@type": "Product",
         name: "Kareppee Crunch Green Matcha",
         description: "Perpaduan matcha premium dengan singkong renyah",
-        image: `${SITE_URL}/images/varian/greenmatcha.jpg`,
+        image: `${SITE_ORIGIN}/images/varian/greenmatcha.jpg`,
         brand: { "@type": "Brand", name: "Kareppee Crunch" },
         offers: {
           "@type": "Offer",
@@ -278,7 +296,7 @@ const productSchema = {
         "@type": "Product",
         name: "Kareppee Crunch Cokelat",
         description: "Manis cokelat premium yang melengkapi rasa",
-        image: `${SITE_URL}/images/varian/cokelat.jpg`,
+        image: `${SITE_ORIGIN}/images/varian/cokelat.jpg`,
         brand: { "@type": "Brand", name: "Kareppee Crunch" },
         offers: {
           "@type": "Offer",

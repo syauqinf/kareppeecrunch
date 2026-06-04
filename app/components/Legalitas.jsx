@@ -1,9 +1,12 @@
 'use client'
 
-import { Shield, FileCheck, Award, CheckCircle, Download, Eye } from 'lucide-react'
+import { useState } from 'react'
+import { Shield, FileCheck, Award, CheckCircle, Eye, X } from 'lucide-react'
 import { AnimateOnScroll, StaggerContainer, StaggerItem } from './MotionWrappers'
 
 export default function Legalitas() {
+  const [activeDocument, setActiveDocument] = useState(null)
+
   const legalDocuments = [
     {
       icon: Shield,
@@ -31,8 +34,12 @@ export default function Legalitas() {
     }
   ]
 
-  const handleViewDocument = (file) => {
-    window.open(file, '_blank')
+  const handleViewDocument = (document) => {
+    setActiveDocument(document)
+  }
+
+  const closeDocument = () => {
+    setActiveDocument(null)
   }
 
   return (
@@ -56,11 +63,11 @@ export default function Legalitas() {
         {/* Legal Documents Grid */}
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {legalDocuments.map((doc, index) => (
-            <StaggerItem key={index} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-500 ease-out border border-gray-200 overflow-hidden flex flex-col h-full">
+            <StaggerItem key={index} className="group bg-white rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out border border-gray-200 overflow-hidden flex flex-col h-full">
               {/* Header */}
               <div className="p-6 border-b border-gray-100">
                 <div className="flex items-center mb-4">
-                  <div className={`w-12 h-12 ${doc.color} rounded-lg flex items-center justify-center mr-3`}>
+                  <div className={`w-12 h-12 ${doc.color} rounded-lg flex items-center justify-center mr-3 shadow-sm group-hover:scale-105 transition-transform duration-300`}>
                     <doc.icon className="w-6 h-6 text-white" aria-hidden="true" />
                   </div>
                   <div>
@@ -89,8 +96,8 @@ export default function Legalitas() {
               {/* Actions */}
               <div className="p-4 bg-gray-50 mt-auto">
                 <button 
-                  onClick={() => handleViewDocument(doc.file)}
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center min-h-[48px]"
+                  onClick={() => handleViewDocument(doc)}
+                  className="w-full bg-blue-500 hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-500/20 active:scale-[0.98] text-white text-sm font-medium py-2 px-4 rounded-lg transition-all duration-200 flex items-center justify-center min-h-[48px]"
                   aria-label={`Lihat dokumen ${doc.title}`}
                 >
                   <Eye className="w-4 h-4 mr-2" aria-hidden="true" />
@@ -111,6 +118,41 @@ export default function Legalitas() {
           </div>
         </AnimateOnScroll>
       </div>
+
+      {activeDocument && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 px-4 py-6 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Preview dokumen ${activeDocument.title}`}
+          onClick={closeDocument}
+        >
+          <div
+            className="relative flex h-[82vh] w-full max-w-5xl flex-col overflow-hidden rounded-xl bg-white shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="flex items-center justify-between gap-4 border-b border-gray-200 px-4 py-3">
+              <div>
+                <h3 className="text-base font-semibold text-gray-900">{activeDocument.title}</h3>
+                <p className="text-xs text-gray-500">{activeDocument.description}</p>
+              </div>
+              <button
+                type="button"
+                onClick={closeDocument}
+                className="flex h-10 w-10 items-center justify-center rounded-full text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+                aria-label="Tutup preview dokumen"
+              >
+                <X className="h-5 w-5" aria-hidden="true" />
+              </button>
+            </div>
+            <iframe
+              src={`${activeDocument.file}#toolbar=1&navpanes=0&view=FitH`}
+              title={`Preview ${activeDocument.title}`}
+              className="h-full w-full bg-gray-100"
+            />
+          </div>
+        </div>
+      )}
     </section>
   )
 }

@@ -1,5 +1,8 @@
 import type { NextConfig } from "next";
 
+const LEGACY_DOMAIN = ["kareppeecrunch", "com"].join(".");
+const LEGACY_WWW_DOMAIN = ["www", LEGACY_DOMAIN].join(".");
+
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
@@ -9,6 +12,32 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: LEGACY_DOMAIN,
+          },
+        ],
+        destination: "https://kareppeecrunch.dekatlokal.com/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: LEGACY_WWW_DOMAIN,
+          },
+        ],
+        destination: "https://kareppeecrunch.dekatlokal.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

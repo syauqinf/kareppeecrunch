@@ -1,6 +1,6 @@
 'use client'
 
-import { Leaf, Award, Clock, Truck, Users, CheckCircle, Sparkles, HandHeart, FileCheck, Globe } from 'lucide-react'
+import { Leaf, Award, Sparkles, HandHeart, FileCheck, Globe } from 'lucide-react'
 import { AnimateOnScroll, StaggerContainer, StaggerItem } from './MotionWrappers'
 
 export default function Features() {
@@ -58,9 +58,9 @@ export default function Features() {
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <StaggerItem key={index}>
-              <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-500 ease-out border border-gray-100">
+              <div className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out border border-gray-100">
                 <div className="flex items-start space-x-4">
-                  <div className={`${feature.color} w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0`}>
+                  <div className={`${feature.color} w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform duration-300`}>
                     <feature.icon className="w-6 h-6 text-white" aria-hidden="true" />
                   </div>
                   <div className="flex-1">

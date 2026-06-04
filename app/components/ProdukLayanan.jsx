@@ -69,7 +69,7 @@ export default function ProdukLayanan() {
 
         {/* Services Grid */}
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <StaggerItem key={service.id} className="group relative">
               {/* Service Card */}
               <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-orange-300 h-full flex flex-col relative overflow-hidden">

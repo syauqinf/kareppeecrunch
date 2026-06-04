@@ -1,6 +1,6 @@
 'use client'
 
-import { Users, TrendingUp, Shield, Zap, Package, CheckCircle, Phone, Star, ArrowRight, MessageCircle } from 'lucide-react'
+import { Users, TrendingUp, Shield, Zap, Package, CheckCircle, Star, MessageCircle } from 'lucide-react'
 import { AnimateOnScroll, StaggerContainer, StaggerItem } from './MotionWrappers'
 
 export default function PeluangKemitraan() {

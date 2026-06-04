@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { ChevronDown, ChevronUp, HelpCircle, MessageCircle, Phone, Mail } from 'lucide-react'
-import { AnimateOnScroll, StaggerContainer, StaggerItem } from './MotionWrappers'
+import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react'
+import { AnimateOnScroll } from './MotionWrappers'
 
 export default function PusatBantuan() {
   const [openIndex, setOpenIndex] = useState(null)

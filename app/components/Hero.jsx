@@ -2,16 +2,9 @@
 
 import Image from 'next/image'
 import { ChevronDown } from 'lucide-react'
-import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 export default function Hero() {
-  const [isClient, setIsClient] = useState(false)
-
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
-
   const handleDiscoverClick = () => {
     const target = document.querySelector('#support')
     if (target) {
@@ -54,21 +47,19 @@ export default function Hero() {
             Kareppee Crunch
           </motion.h1>
 
-          {isClient && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
+          >
+            <button
+              onClick={handleDiscoverClick}
+              aria-label="Jelajahi produk Kareppee Crunch"
+              className="mt-5 inline-block text-xs uppercase tracking-widest border border-white/70 px-6 py-2 rounded-full hover:bg-white hover:text-black hover:-translate-y-0.5 transition cursor-pointer min-h-[48px] min-w-[48px]"
             >
-              <button
-                onClick={handleDiscoverClick}
-                aria-label="Jelajahi produk Kareppee Crunch"
-                className="mt-5 inline-block text-xs uppercase tracking-widest border border-white/70 px-6 py-2 rounded-full hover:bg-white hover:text-black transition cursor-pointer min-h-[48px] min-w-[48px]"
-              >
-                Discover
-              </button>
-            </motion.div>
-          )}
+              Discover
+            </button>
+          </motion.div>
         </div>
       </div>
 

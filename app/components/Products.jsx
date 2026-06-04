@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { MessageCircle, ExternalLink } from 'lucide-react'
+import { MessageCircle } from 'lucide-react'
 import { AnimateOnScroll, StaggerContainer, StaggerItem } from './MotionWrappers'
 
 export default function Products() {
@@ -76,7 +76,7 @@ export default function Products() {
 
         <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
           {products.map((product) => (
-            <StaggerItem key={product.id} className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-500 ease-out h-full flex flex-col">
+            <StaggerItem key={product.id} className="group bg-white rounded-lg shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ease-out h-full flex flex-col overflow-hidden border border-gray-100">
               {/* Badge */}
               {product.badge && (
                 <div className="absolute top-4 right-4 z-10">
@@ -101,7 +101,7 @@ export default function Products() {
                   width={400}
                   height={400}
                   loading="lazy"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
 
@@ -118,7 +118,7 @@ export default function Products() {
                 <button 
                   onClick={() => handleOrder(product.name)}
                   aria-label={`Order sekarang varian ${product.name} via WhatsApp`}
-                  className="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-2 md:py-3 px-3 md:px-4 rounded-lg transition-colors duration-200 flex items-center justify-center mt-auto text-sm md:text-base min-h-[48px]"
+                  className="w-full bg-green-500 hover:bg-green-600 hover:shadow-lg hover:shadow-green-500/20 active:scale-[0.98] text-white font-medium py-2 md:py-3 px-3 md:px-4 rounded-lg transition-all duration-200 flex items-center justify-center mt-auto text-sm md:text-base min-h-[48px]"
                 >
                   <MessageCircle className="w-3 h-3 md:w-4 md:h-4 mr-2" aria-hidden="true" />
                   Order Sekarang

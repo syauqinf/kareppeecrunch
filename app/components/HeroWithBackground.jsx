@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { ArrowRight, Star, ChefHat, MapPin } from 'lucide-react'
 
 export default function HeroWithBackground({ backgroundImage = null }) {
@@ -9,10 +10,12 @@ export default function HeroWithBackground({ backgroundImage = null }) {
       <div className="absolute inset-0">
         <div className="w-full h-full relative">
           {backgroundImage ? (
-            <img 
-              src={backgroundImage} 
-              alt="Kareppee Crunch Potato Field" 
-              className="w-full h-full object-cover" 
+            <Image
+              src={backgroundImage}
+              alt="Kareppee Crunch Potato Field"
+              fill
+              sizes="100vw"
+              className="object-cover"
             />
           ) : (
             <div className="absolute inset-0 bg-gradient-to-b from-orange-200 via-orange-300 to-orange-400">
